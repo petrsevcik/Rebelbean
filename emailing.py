@@ -22,4 +22,5 @@ def send_email(message):
     server.quit()
     return "Email sent!"
 
-print(send_email("Shreeeeed"))
+# TEST
+# print(send_email("Shreeeeded"))
