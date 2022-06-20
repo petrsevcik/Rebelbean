@@ -6,7 +6,7 @@ RB_URL = "https://www.rebelbean.cz"
 def rb_scraper():
     result = ()
     with sync_playwright() as p:
-        browser = p.chromium.launch()
+        browser = p.chromium.launch(headless=False)
         page = browser.new_page()
         page.goto(f"{RB_URL}/kava/")
         all_coffee = page.query_selector_all('.product')
