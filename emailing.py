@@ -7,9 +7,9 @@ EMAIL_PASSWORD = config("email_password")
 SERVER = config("server")
 RECEIVER_EMAIL = config("receiver_email")
 
-def send_email(message):
+def send_email(message, receivers_email_list):
     sender_email = SENDER_EMAIL  # fill your email
-    receiver_email = [RECEIVER_EMAIL] #recipients
+    receiver_email = receivers_email_list #recipients
     password = EMAIL_PASSWORD  #fill your password
     msg = EmailMessage()
     msg.set_content(message)
@@ -22,5 +22,5 @@ def send_email(message):
     server.quit()
     return "Email sent!"
 
-# TEST
-# print(send_email("Shreeeeded"))
+
+

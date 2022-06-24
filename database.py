@@ -7,10 +7,11 @@ def save_email_to_db(email):
     cur.execute("""INSERT INTO emails
             ('email')
         VALUES
-            (?)""", email)
+            (?)""", (email,))
     con.commit()
     con.close()
     print(f"email {email} saved to db!")
+    return True
 
 def save_test_roast_availability(date, availability):
     con = sqlite3.connect("rebelbean.db")
